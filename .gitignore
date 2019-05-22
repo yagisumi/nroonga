@@ -4,3 +4,8 @@ node_modules
 lib/nroonga_bindings.node
 test/tmp
 deps
+/win/helper.js
+/win/groonga/
+/win/temp/
+.rpt2_cache
+*.tgz
