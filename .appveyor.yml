@@ -12,7 +12,7 @@ platform:
 
 branches:
   only:
-    helper-for-windows
+    - helper-for-windows
 
 # Install scripts. (runs after repo cloning)
 install:
