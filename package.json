@@ -19,10 +19,20 @@
     "url": "http://github.com/nroonga/nroonga/issues"
   },
   "devDependencies": {
+    "@types/fs-extra": "^7.0.0",
+    "@types/node": "^12.0.2",
+    "@types/node-fetch": "^2.3.4",
     "chai": "",
     "fs-extra": "",
     "mocha": "",
-    "standard": "^12.0.1"
+    "node-fetch": "^2.6.0",
+    "node-stream-zip": "^1.8.0",
+    "rollup": "^1.12.3",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "standard": "^12.0.1",
+    "typescript": "^3.4.5"
   },
   "dependencies": {
     "nan": "^2.13.2"
@@ -33,19 +43,28 @@
     "examples",
     "lib/nroonga.js",
     "license",
-    "npm-shrinkwrap.json",
     "package.json",
     "src",
-    "test"
+    "test",
+    "win/helper.js",
+    "win/win.gypi"
   ],
   "scripts": {
-    "install": "node-gyp rebuild",
+    "install": "npm run helper && node-gyp rebuild",
     "lint": "standard",
     "test": "npm run lint && npm run unit",
-    "unit": "mocha --reporter list"
+    "unit": "mocha --reporter list",
+    "helper": "(npm run build:helper --silent || echo 'No problem') && node win/helper.js",
+    "build:helper": "rollup -c win/src/rollup.config.js",
+    "prepack": "npm run build:helper"
   },
   "main": "./lib/nroonga",
   "engines": {
     "node": ">= 6.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "win/"
+    ]
   }
 }
