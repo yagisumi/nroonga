@@ -10,10 +10,6 @@ platform:
   - x86
   - x64
 
-branches:
-  only:
-    - helper-for-windows
-
 # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of Node.js or io.js

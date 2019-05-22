@@ -119,33 +119,6 @@ export class PreInstall {
     return html
   }
 
-  // verToNum(version: string): number {
-  //   if (version.match(/(\d+)\.(\d+)\.(\d+)/)) {
-  //     return Number(RegExp.$1) * 1000 * 1000 + Number(RegExp.$2) * 1000 + Number(RegExp.$3)
-  //   } else {
-  //     return 0
-  //   }
-  // }
-
-  // getTargetZipName(html: string): string | null {
-  //   let filename: string | null = null
-  //   let version = this.verToNum('9.0.1')
-  //   html.replace(
-  //     /<a\s+href="(groonga-(\d+\.\d+\.\d+)-([^-]+)-(vs[^-]+)-with-vcruntime.zip)"/gi,
-  //     (match, file, ver, arch, vs) => {
-  //       if (arch === this.env.arch) {
-  //         let v = this.verToNum(ver)
-  //         if (v > version) {
-  //           filename = file
-  //           version = v
-  //         }
-  //       }
-  //       return match
-  //     }
-  //   )
-  //   return filename
-  // }
-
   getTargetZipName(html: string): string | null {
     let filename: string | null = null
 
