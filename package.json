@@ -46,8 +46,7 @@
     "package.json",
     "src",
     "test",
-    "win/helper.js",
-    "win/win.gypi"
+    "win/helper.js"
   ],
   "scripts": {
     "install": "npm run helper && node-gyp rebuild",
